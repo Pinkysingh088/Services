@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/Konexions/photos/koneXion_logo.png" type="image/png">
+  <title>Konexions</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lottie Animation Library -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+    .navbar .branding .logo {
+      height: 130px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 20%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #003366 !important;
+    }
+    .navbar-nav .nav-link {
+      color: #003366 !important;
+      font-weight: 500;
+    }
+
+    /*sliding line css*/
+.scroll-banner {
+  width: 100%;
+ 
+  color:rgb(1, 35, 99);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 18s linear infinite;
+  letter-spacing: 0.5px;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+    /* Business Gallery Styling */
+.gallery-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.gallery-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+/* Image Styling */
+.gallery-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Column spacing */
+.gallery-container .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*corner badge*/
+.corner-badge {
+    position: fixed;
+    padding: 19px 3px;
+    top: 200px;
+    right: 1px;
+    z-index: 9999;
+}
+.corner-badge img {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;      /* Reduced padding */
+  width: 32px;           /* Reduced width */
+  color: #fff;
+  font-size: 14px;       /* Smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 10px;    /* Adjusted hover padding */
+}
+
+.branding .logo {
+  height: 50px;
+  width: auto;
+}
+
+</style>
+</head>
+<htm>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <div class="branding">
+      <a href="index.php">
+        <img src="/Konexions/photos/company_logo.jpeg" alt="koneXion Logo" class="logo">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="career.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="konexions.php">Why Konexions</a></li>
+        <li class="nav-item"><a class="nav-link" href="kon_journey.php">Life at Konexions</a></li>
+        <li class="nav-item"><a class="nav-link" href="company_profile.php">About Konexions</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sliding Line -->
+<div class="scroll-banner">
+  <div class="scroll-text">
+    We are India's fastest growing outsourcing company
+  </div>
+</div>
+
+<!-- Business Gallery Section -->
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="text-center">Our Progress</h2>
+    <div class="row gallery-container g-4">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/konn4.jpeg" alt="Gallery Image 1" class="gallery-img">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/kon1.jpeg" alt="Gallery Image 2" class="gallery-img">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/kon3.jpeg" alt="Gallery Image 3" class="gallery-img">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/kon2.jpeg" alt="Gallery Image 4" class="gallery-img">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/kon5.jpeg" alt="Gallery Image 5" class="gallery-img">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="/Konexions/photos/kon6.jpeg" alt="Gallery Image 6" class="gallery-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="company_profile.html" style="color: black; text-decoration: none;">Company Profile</a></li><br>
+        <li><a href="leadership.html" style="color: black; text-decoration: none;">Leadership</a></li><br>
+        <li><a href="csr.html" style="color: black; text-decoration: none;">CSR</a></li><br>
+        <li><a href="sustainability.html" style="color: black; text-decoration: none;">Sustainability</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="general_staffing.html" style="color: black; text-decoration: none;">General Staffing</a></li><br>
+        <li><a href="professional_staffing.html" style="color: black; text-decoration: none;">Professional Staffing</a></li><br>
+        <li><a href="digital_platform.html" style="color: black; text-decoration: none;">Digital Platform</a></li><br>
+        <li><a href="cycle_management.html"  style="color: black; text-decoration: none;">Customer Life Cycle Management</a><li><br>
+        <li><a href="recovery_management.html" style="color: black; text-decoration: none;">Collection & Recovery Management</a><li><br>
+        <li><a href="back_office.html" style="color: black; text-decoration: none;">Back Office Services</a><li><br>
+        <li><a href="facilities.html" style="color: black; text-decoration: none;">Facility Management</a><li><br>
+        <li><a href="acquisition_management.html" style="color: black; text-decoration: none;">Customer Acquisition Management</a><li><br>
+      </ul>
+    </div>
+
+             <!-- Allied Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+    <h3 style="color: black; font-weight: bold;">Allied Services</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="stationary.html" style="color: black; text-decoration: none;">Office Supplies & Stationary</a></li><br>
+      <li><a href="office_canteen.html" style="color: black; text-decoration: none;">Office Canteen</a></li><br>
+      <li><a href="security_services.html" style="color: black; text-decoration: none;">Security Services</a></li><br>
+      <li><a href="event_management.html" style="color: black; text-decoration: none;">Event Management</a></li><br>
+    </ul>
+  </div>
+  
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+    <!----Corner badge--->
+    <div class="corner-badge">
+        <img src="/Konexions/photos/place.jpeg" alt="Great Place to Work">
+    </div>
+
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="career.html" style="color: black; text-decoration: none;">Careers</a></li><br>
+        <li><a href="contact.html" style="color: black; text-decoration: none;">Contact Us</a></li><br>
+      </ul>
+    </div>
+
+
+    <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+        <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+        <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;"
+            onchange="if(this.value) window.location.href=this.value;">
+          <option selected disabled value="">Select Country</option>
+          <option value="dubai.html">Dubai</option>
+        </select>
+    </div>
+</div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2007 KoneXions. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

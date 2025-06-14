@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/Konexions/photos/koneXion_logo.png" type="image/png">
+  <title>Header with Navigation</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top header */
+    .header {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+
+    /* Navigation */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .branding .logo {
+  height: 130px;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white; /* or your navbar bg */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #002147; /* Navy Blue */
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  min-width: 250px;         /* Wider base width */
+  width: max-content;       /* Allow width to expand with content */
+  white-space: nowrap;      /* Prevent line breaks in menu text */
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: #002147;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-menu li:hover .dropdown-content {
+      display: block;
+    }
+    /* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;
+  width: 32px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 15px;
+}
+.branding .logo {
+  height: 60px; /* Adjust height as needed */
+  width: auto;
+}
+/*konexion services */
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.service-box {
+  flex: 1 1 200px;
+  max-width: 250px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.service-box h3 {
+  font-size: 18px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+/*corner badge*/
+.corner-badge {
+    position: fixed;
+    padding: 19px 3px;
+    top: 200px;
+    right: 1px;
+    z-index: 9999;
+}
+.corner-badge img {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*sliding line css*/
+.scroll-banner {
+  width: 100%;
+  color:rgb(1, 35, 99);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 18s linear infinite;
+  letter-spacing: 0.5px;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+  </style>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="header">
+    <div class="logo">
+     
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone icon"></i>
+        <span>+91-9811524800</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope icon"></i>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Navigation Bar -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<nav class="navbar">
+  <div class="branding">
+    <a href="index.html">
+      <img src="/Konexions/photos/company_logo.jpeg" alt="koneXion Logo" class="logo">
+    </a>
+  </div>
+  <ul class="nav-menu">
+    <li class="has-dropdown">
+      <a href="#">About Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="company_profile.html">Company Profile</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="csr.html">CSR</a>
+        <a href="sustainability.html">Sustainability</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="general_staffing.html">General Staffing</a>
+        <a href="professional_staffing.html">Professional Staffing</a>
+        <a href="digital_platform.html">Digital Platform</a>
+        <a href="cycle_management.html">Customer Life Cycle Management</a>
+        <a href="recovery_management.html">Collection & Recovery Management</a>
+        <a href="back_office.html">Back Office Services</a>
+        <a href="facilities.html">Facility Management</a>
+        <a href="acquisition_management.html">Customer Acquisition Management</a>
+      </div>
+    </li>
+     <li class="has-dropdown">
+      <a href="#">Allied Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="stationary.html">Office Supplies & Stationary</a>
+        <a href="office_canteen.html">Office Canteen</a>
+        <a href="security_services.html">Security Services</a>
+        <a href="event_management.html">Event Management</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="press_release.html">Press Release</a>
+        <a href="press_coverage.html">Press Coverage</a>
+      </div>
+    </li>
+    <li><a href="career.php">Career</a></li>
+    <li class="has-dropdown">
+      <a href="#">Overseas <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="dubai.html">Dubai</a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Sliding Line -->
+<div class="scroll-banner">
+  <div class="scroll-text">
+    We are India's fastest growing outsourcing company
+  </div>
+</div>
+
+
+<!-- Konexions Image -->
+<div style="margin: 0; padding: 0;">
+  <img src="/Konexions/photos/general.jpg" alt="Konexions" style="width: 100%; height: 200px; display: block; margin: 0; padding: 0;" />
+</div>
+
+<!-- Konexions Foundation Section -->
+<div style="display: flex; align-items: center; padding: 30px; gap: 30px;">
+
+  <!-- Right: Heading and Content -->
+  <div style="flex: 1;">
+    <h2 style="margin: 0; color: #001f3f; text-align:center;">Konexions Staffing Solutions</h2>
+    <p style="margin-top: 13px; font-size: 16px; color: #333; text-align: center; font-family: 'Segoe UI', sans-serif">
+     
+Konexions Staffing Solution, is a key vertical of Konexions, dedicated to unlock the potential of untapped human capital and empowering businesses to achieve their strategic goals. 
+Since our inception in 2007, we have offered top-notch Staffing Solutions 
+Today, we proudly stand as India’s premier private-sector employer and the one of the largest staffing organizations, providing  a comprehensive range of human resource solutions to cater to the ever-evolving needs of fast-paced and dynamic businesses.
+A market leader in staffing, Konexions caters to some of the biggest brands in the country. 
+Our proven track record of delivering world-class staffing solutions seamlessly enables us to oversee the entire recruitment process from assessing candidates to recruitment while reducing the cost of staffing. By leveraging technology and expertise, we enhance the quality of hires and optimize resources for better workforce management.  
+    </p>
+  </div>
+</div>
+
+<!--konexions services-->
+<section class="services-section">
+  <div class="service-box">
+    <img src="/Konexions/photos/staffing_solution.jpeg" alt="Staffing Solutions">
+    <h3>Staffing Solutions</h3>
+    <p>Tailor-made solutions for <br> diverse staffing requirements.</p>
+  </div>
+  <div class="service-box">
+    <img src="/Konexions/photos/manage_services.jpeg" alt="Managed Services">
+    <h3>Managed Services</h3>
+    <p>Delivering excellence through targeted services.</p>
+  </div>
+  <div class="service-box">
+    <img src="/Konexions/photos/retail_solution.jpeg" alt="Retail Solutions">
+    <h3>Retail Solutions</h3>
+    <p>We offer customized solutions for all your retail needs.</p>
+  </div>
+  <div class="service-box">
+    <img src="/Konexions/photos/recruitment.jpeg" alt="Search and Recruitment">
+    <h3>Search and Recruitment</h3>
+    <p>Expert recruitment solutions for finding C-suite executives.</p>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3><br>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="company_profile.html" style="color: black; text-decoration: none;">Company Profile</a></li><br>
+        <li><a href="leadership.html" style="color: black; text-decoration: none;">Leadership</a></li><br>
+        <li><a href="csr.html" style="color: black; text-decoration: none;">CSR</a></li><br>
+        <li><a href="sustainability.html" style="color: black; text-decoration: none;">Sustainability</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3><br>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="general_staffing.html" style="color: black; text-decoration: none;">General Staffing</a></li><br>
+        <li><a href="professional_staffing.html" style="color: black; text-decoration: none;">Professional Staffing</a></li><br>
+        <li><a href="digital_platform.html" style="color: black; text-decoration: none;">Digital Platform</a></li><br>
+        <li><a href="cycle_management.html"  style="color: black; text-decoration: none;">Customer Life Cycle Management</a></li><br>
+        <li><a href="recovery_management.html" style="color: black; text-decoration: none;">Collection & Recovery Management</a></li><br>
+        <li><a href="back_office.html" style="color: black; text-decoration: none;">Back Office Services</a></li><br>
+        <li><a href="facilities.html" style="color: black; text-decoration: none;">Facility Management</a></li><br>
+        <li><a href="acquisition_management.html" style="color: black; text-decoration: none;">Customer Acquisition Management</a></li><br>
+      </ul>
+    </div>
+
+       <!-- Allied Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+    <h3 style="color: black; font-weight: bold;">Allied Services</h3><br>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="stationary.html" style="color: black; text-decoration: none;">Office Supplies & Stationary</a></li><br>
+      <li><a href="office_canteen.html" style="color: black; text-decoration: none;">Office Canteen</a></li><br>
+      <li><a href="security_services.html" style="color: black; text-decoration: none;">Security Services</a></li><br>
+      <li><a href="event_management.html" style="color: black; text-decoration: none;">Event Management</a></li><br>
+    </ul>
+  </div>
+
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+    
+    
+           <!----Corner badge--->
+    <div class="corner-badge">
+        <img src="/Konexions/photos/place.jpeg" alt="Great Place to Work">
+    </div>
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3><br>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="career.html" style="color: black; text-decoration: none;">Careers</a></li><br>
+        <li><a href="contact.html" style="color: black; text-decoration: none;">Contact Us</a></li><br>
+      </ul>
+    </div>
+
+        <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+        <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+        <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;"
+            onchange="if(this.value) window.location.href=this.value;">
+          <option selected disabled value="">Select Country</option>
+          <option value="dubai.html">Dubai</option>
+        </select>
+    </div>
+</div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2007 KoneXions. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

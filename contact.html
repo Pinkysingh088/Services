@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/Konexions/photos/koneXion_logo.png" type="image/png">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <title>Konexions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top header */
+    .header {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+
+    /* Navigation */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .branding .logo {
+  height: 130px;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white; /* or your navbar bg */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #002147; /* Navy Blue */
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  min-width: 250px;         /* Wider base width */
+  width: max-content;       /* Allow width to expand with content */
+  white-space: nowrap;      /* Prevent line breaks in menu text */
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: #002147;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-menu li:hover .dropdown-content {
+      display: block;
+    }
+    /* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;
+  width: 40px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 15px;
+}
+.branding .logo {
+  height: 60px; /* Adjust height as needed */
+  width: auto;
+}
+/*Customer success section*/
+/* Container */
+.customer-success {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.customer-success .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Headings */
+.customer-success .tagline {
+  color: #f7a600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.customer-success .main-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Swiper slides */
+.swiper-slide.customer-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image inside card */
+.customer-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Card content */
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Read More Button */
+.read-btn {
+  background-color: #f7a600;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.read-btn:hover {
+  background-color: #d98d00;
+}
+
+/* Hover effect */
+.customer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* View More Button */
+.view-more {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 15px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+  background-color: #00264d;
+}
+
+/* Swiper arrows style */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #004080;
+  transition: transform 0.3s ease;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.2);
+}
+/*Footer*/
+.site-footer {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000000; /* Ensures header text is black */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.footer-section select {
+  padding: 8px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #00000033;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #000000;
+}
+
+.footer-bottom .left-text a {
+  color: #000000;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-bottom .left-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom .right-text {
+  text-align: right;
+  flex-grow: 1;
+  color: #000000;
+}
+/*Driving Excellence & Technology Section*/
+  .circle-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+  }
+
+  .circle-img:hover {
+    transform: scale(1.1);
+  }
+  /*sustainable relationships section*/
+  
+    .section-container {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .section-container h2 {
+      color: #f7931e;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .section-container h1 {
+      color: #003366;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background-color: #ffc107;
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #e6b800;
+    }
+
+    .view-more {
+      margin-top: 40px;
+    }
+
+    .view-more a {
+      background-color: #ffc107;
+      color: #003366;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-more a:hover {
+      background-color: #e6b800;
+    }
+/* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;      /* Reduced padding */
+  width: 32px;           /* Reduced width */
+  color: #fff;
+  font-size: 14px;       /* Smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 10px;    /* Adjusted hover padding */
+}
+
+.branding .logo {
+  height: 50px;
+  width: auto;
+}
+
+
+/*corner badge*/
+.corner-badge {
+    position: fixed;
+    padding: 19px 3px;
+    top: 200px;
+    right: 1px;
+    z-index: 9999;
+}
+.corner-badge img {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8faff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .left-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .left-column h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .left-column p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .right-column h3 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row input {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    button {
+      background-color: #002366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: fit-content;
+      align-self: flex-start;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #001d4d;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #ddd;
+      margin: 20px 0;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+    .grievance-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.grievance-box {
+  background: #fff;
+  border-left: 5px solid #003366;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.grievance-box h2 {
+  font-size: 20px;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.grievance-box p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+.grievance-box a {
+  color: #003366;
+  text-decoration: none;
+}
+
+.grievance-box a:hover {
+  text-decoration: underline;
+}
+/*sliding line css*/
+.scroll-banner {
+  width: 100%;
+  color:rgb(1, 35, 99);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 18s linear infinite;
+  letter-spacing: 0.5px;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<html>
+
+  <!-- Top Header -->
+  <header class="header">
+    <div class="logo">
+     
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone icon"></i>
+        <span>+91-9811524800</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope icon"></i>
+        <a href=".com">info@example.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<nav class="navbar">
+  <div class="branding">
+    <a href="index.php">
+      <img src="/Konexions/photos/company_logo.jpeg" alt="koneXion Logo" class="logo">
+    </a>
+  </div>
+  <ul class="nav-menu">
+    <li class="has-dropdown">
+      <a href="#">About Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="company_profile.html">Company Profile</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="csr.html">CSR</a>
+        <a href="sustainability.html">Sustainability</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="general_staffing.html">General Staffing</a>
+        <a href="professional_staffing.html">Professional Staffing</a>
+        <a href="digital_platform.html">Digital Platform</a>
+        <a href="cycle_management.html">Customer Life Cycle Management</a>
+        <a href="recovery_management.html">Collection & Recovery Management</a>
+        <a href="back_office.html">Back Office Services</a>
+        <a href="facilities.html">Facility Management</a>
+        <a href="acquisition_management.html">Customer Acquisition Management</a>
+      </div>
+    </li>
+      <li class="has-dropdown">
+      <a href="#">Allied Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="stationary.html">Office Supplies & Stationary</a>
+        <a href="office_canteen.html">Office Canteen</a>
+        <a href="security_services.html">Security Services</a>
+        <a href="event_management.html">Event Management</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="press_release.html">Press Release</a>
+        <a href="press_coverage.html">Press Coverage</a>
+      </div>
+    </li>
+    <li><a href="career.php">Career</a></li>
+    <li class="has-dropdown">
+      <a href="#">Overseas <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="dubai.html">Dubai</a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Sliding Line -->
+<div class="scroll-banner">
+  <div class="scroll-text">
+    We are India's fastest growing outsourcing company
+  </div>
+</div>
+
+<!-- Konexions Image -->
+<div style="margin: 0; padding: 0;">
+  <img src="/Konexions/photos/contact_us.jpg" alt="Konexions" style="width: 104%; height: 300px; display: block; margin: 0; padding: 0;" />
+</div>
+
+
+<div class="container">
+  <div class="left-column">
+    <h3>Konexions Back Office Services Pvt Ltd</h3>
+    <p>I-16 Lajpat Nagar -II, New Delhi 110024 (India).</p>
+
+    <div class="section">
+      <h3>Office Address</h3>
+      <p>Reg office: I-16 Lajpat Nagar II, New Delhi-110024 (India)</p>
+    </div>
+
+    <div class="section">
+      <h3>Contact Info</h3>
+      <p><strong>Phone:</strong> (+091) 9811524800<br>
+         <strong>Email:</strong> info@jumbokonexions.com</p>
+    </div>
+
+    <div class="section">
+      <h3>Grievance Redressal Officer (North)</h3>
+      <p><strong>Name:</strong> Sarita Jha</p>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <h3>Leave a Message</h3>
+    <form action="submit_contact.html" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Enter Your Message . . ." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<section class="grievance-section">
+  <div class="grievance-box">
+    <h2>Grievance Redressal Officer (North)</h2>
+    <p><strong>Name:</strong> Sarita Jha</p>
+    <p><strong>Phone:</strong> 95996 45599</p>
+    <p><strong>Email:</strong> <a href="mailto:saritajha@jumbokonexions.com">saritajha@jumbokonexions.com</a></p>
+    <p><strong>Address:</strong> I-16 Lajpat Nagar II, New Delhi-110024 (India)</p>
+  </div>
+
+  <div class="grievance-box">
+    <h2>Grievance Redressal Officer (South)</h2>
+    <p><strong>Name:</strong> Krishnan Vaidyanathan</p>
+    <p><strong>Phone:</strong> 9986991805</p>
+    <p><strong>Email:</strong> <a href="mailto:v.krishnan@jumbokonexions.com">v.krishnan@jumbokonexions.com</a></p>
+    <p><strong>Address:</strong> 425/39, 5th Floor, Vinay Arcade, 11th Cross Rd, beside Hotel Sabharwal Inn, Lakkasandra Extension, Wilson Garden, Bengaluru, Karnataka 560027</p>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="company_profile.html" style="color: black; text-decoration: none;">Company Profile</a></li><br>
+        <li><a href="leadership.html" style="color: black; text-decoration: none;">Leadership</a></li><br>
+        <li><a href="csr.html" style="color: black; text-decoration: none;">CSR</a></li><br>
+        <li><a href="sustainability.html" style="color: black; text-decoration: none;">Sustainability</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="general_staffing.html" style="color: black; text-decoration: none;">General Staffing</a></li><br>
+        <li><a href="professional_staffing.html" style="color: black; text-decoration: none;">Professional Staffing</a></li><br>
+        <li><a href="digital_platform.html" style="color: black; text-decoration: none;">Digital Platform</a></li><br>
+        <li><a href="cycle_management.html"  style="color: black; text-decoration: none;">Customer Life Cycle Management</a></li><br>
+        <li><a href="recovery_management.html" style="color: black; text-decoration: none;">Collection & Recovery Management</a></li><br>
+        <li><a href="back_office.html" style="color: black; text-decoration: none;">Back Office Services</a></li><br>
+        <li><a href="facilities.html" style="color: black; text-decoration: none;">Facility Management</a></li><br>
+        <li><a href="acquisition_management.html" style="color: black; text-decoration: none;">Customer Acquisition Management</a></li><br>
+      </ul>
+    </div>
+
+       <!-- Allied Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+    <h3 style="color: black; font-weight: bold;">Allied Services</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="stationary.html" style="color: black; text-decoration: none;">Office Supplies & Stationary</a></li><br>
+      <li><a href="office_canteen.html" style="color: black; text-decoration: none;">Office Canteen</a></li><br>
+      <li><a href="security_services.html" style="color: black; text-decoration: none;">Security Services</a></li><br>
+      <li><a href="event_management.html" style="color: black; text-decoration: none;">Event Management</a></li><br>
+    </ul>
+  </div>
+
+     <!-- Allied Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+    <h3 style="color: black; font-weight: bold;">Allied Services</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="stationary.html" style="color: black; text-decoration: none;">Office Supplies & Stationary</a></li><br>
+      <li><a href="office_canteen.html" style="color: black; text-decoration: none;">Office Canteen</a></li><br>
+      <li><a href="security_services.html" style="color: black; text-decoration: none;">Security Services</a></li><br>
+      <li><a href="event_management.html" style="color: black; text-decoration: none;">Event Management</a></li><br>
+    </ul>
+  </div>
+
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+    
+    <!----Corner badge--->
+    <div class="corner-badge">
+        <img src="/Konexions/photos/place.jpeg" alt="Great Place to Work">
+    </div>
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="career.html" style="color: black; text-decoration: none;">Careers</a></li><br>
+        <li><a href="contact.html" style="color: black; text-decoration: none;">Contact Us</a></li><br>
+      </ul>
+    </div>
+
+        <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+        <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+        <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;"
+            onchange="if(this.value) window.location.href=this.value;">
+          <option selected disabled value="">Select Country</option>
+          <option value="dubai.php">Dubai</option>
+        </select>
+    </div>
+</div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2025 KoneXions. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

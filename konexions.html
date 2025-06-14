@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/Konexions/photos/koneXion_logo.png" type="image/png">
+  <title>Konexions</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lottie Animation Library -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+    .navbar .branding .logo {
+      height: 130px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 20%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #003366 !important;
+    }
+    .navbar-nav .nav-link {
+      color: #003366 !important;
+      font-weight: 500;
+    }
+    /*corner badge*/
+.corner-badge {
+    position: fixed;
+    padding: 19px 3px;
+    top: 200px;
+    right: 1px;
+    z-index: 9999;
+}
+.corner-badge img {
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;      /* Reduced padding */
+  width: 32px;           /* Reduced width */
+  color: #fff;
+  font-size: 14px;       /* Smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 10px;    /* Adjusted hover padding */
+}
+
+.branding .logo {
+  height: 60px;
+  width: auto;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <div class="branding">
+      <a href="index.php">
+        <img src="/Konexions/photos/company_logo.jpeg" alt="koneXion Logo" class="logo">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="career.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="konexions.php">Why Konexions</a></li>
+        <li class="nav-item"><a class="nav-link" href="kon_journey.php">Life at Konexions</a></li>
+        <li class="nav-item"><a class="nav-link" href="company_profile.php">About Konexions</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Konexions Info Section with Images -->
+<section style="padding: 40px 20px; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+  <h2 style="text-align: center; color: #002d72; font-weight: bold; margin-bottom: 40px;">
+    Konexions stands as a trusted partner, poised to soar above expectations and redefine outsourcing excellence
+  </h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    
+    <!-- Card 1 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/batch_kon.jpeg" alt="Leadership" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Seasoned Leadership Expertise</h3>
+      <p>Guided by accomplished professionals with a proven history of success.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/staffs_kon.jpeg" alt="Dedicated Teams" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Dedicated Teams</h3>
+      <p>Expert professionals passionate about delivering results.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/pan_india.jpeg" alt="Pan India Presence" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Pan India Presence</h3>
+      <p>We are present all over India with our offices in all prominent cities.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/target_kon.jpeg" alt="Swift Execution" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Swift Execution</h3>
+      <p>Swift execution is our USP & we aim at smooth AND swift execution.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/purpose_kon.jpeg" alt="Agile and Collaborative" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Agile and Collaborative</h3>
+      <p>Tailored solutions that adapt to your evolving needs.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/search_kon.jpeg" alt="Data-driven Approach" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Data-driven Approach</h3>
+      <p>We measure success based on your impact.</p>
+    </div>
+
+    <!-- Card 7 -->
+    <div style="width: 280px; padding: 20px; background-color: white; text-align: center; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <img src="/Konexions/photos/star_kon.jpeg" alt="Result Oriented" style="height: 80px; margin-bottom: 15px;">
+      <h3 style="color: #002d72;">Result Oriented</h3>
+      <p>We are aligned with our clients for the target & achievements.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="company_profile.php" style="color: black; text-decoration: none;">Company Profile</a></li>
+        <li style="margin-bottom: 10px;"><a href="leadership.php" style="color: black; text-decoration: none;">Leadership</a></li>
+        <li style="margin-bottom: 10px;"><a href="csr.php" style="color: black; text-decoration: none;">CSR</a></li>
+        <li style="margin-bottom: 10px;"><a href="sustainability.php" style="color: black; text-decoration: none;">Sustainability</a></li>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="general_staffing.php" style="color: black; text-decoration: none;">General Staffing</a></li>
+        <li style="margin-bottom: 10px;"><a href="professional_staffing.php" style="color: black; text-decoration: none;">Professional Staffing</a></li>
+        <li style="margin-bottom: 10px;"><a href="digital_platform.php" style="color: black; text-decoration: none;">Digital Platform</a></li>
+        <li  style="margin-bottom: 10px;"><a href="cycle_management.php"  style="color: black; text-decoration: none;">Customer Life Cycle Management</a></li>
+        <li  style="margin-bottom: 10px;"><a href="recovery_management.php" style="color: black; text-decoration: none;">Collection & Recovery Management</a></li>
+        <li  style="margin-bottom: 10px;"><a href="back_office.php" style="color: black; text-decoration: none;">Back Office Services</a></li>
+        <li  style="margin-bottom: 10px;"><a href="facilities.php" style="color: black; text-decoration: none;">Facility Management</a></li>
+        <li  style="margin-bottom: 10px;"><a href="acquisition_management.php" style="color: black; text-decoration: none;">Customer Acquisition Management</a></li>
+      </ul>
+    </div>
+
+       <!-- Allied Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+    <h3 style="color: black; font-weight: bold;">Allied Services</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="stationary.php" style="color: black; text-decoration: none;">Office Supplies & Stationary</a></li><br>
+      <li><a href="office_canteen.php" style="color: black; text-decoration: none;">Office Canteen</a></li><br>
+      <li><a href="security_services.php" style="color: black; text-decoration: none;">Security Services</a></li><br>
+      <li><a href="event_management.php" style="color: black; text-decoration: none;">Event Management</a></li><br>
+    </ul>
+  </div>
+
+    
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+    
+      <!----Corner badge--->
+    <div class="corner-badge">
+        <img src="/Konexions/photos/place.jpeg" alt="Great Place to Work">
+    </div>
+
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="career.php" style="color: black; text-decoration: none;">Careers</a></li>
+        <li style="margin-bottom: 10px;"><a href="contact.php" style="color: black; text-decoration: none;">Contact Us</a></li>
+      </ul>
+    </div>
+
+        <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+        <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+        <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;"
+            onchange="if(this.value) window.location.href=this.value;">
+          <option selected disabled value="">Select Country</option>
+          <option value="dubai.php">Dubai</option>
+        </select>
+    </div>
+</div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2007 KoneXions. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
